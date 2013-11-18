@@ -8,6 +8,7 @@
     <meta content='font, size, typography, typographic, typeface, em, ems, px, scale, calculate, calculator, webfont, edit, update, modular scale, preview' name='keywords'>
     <link href='style.css' media='all' rel='stylesheet'>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Libre+Baskerville:400' rel='stylesheet' type='text/css'>
+    <link class='webfont_url' rel='stylesheet' type='text/css'>
     <link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -65,21 +66,23 @@
                 <label>Preview Text</label>
                 <input class='preview_text input_select_all' type='text' value='A Visual Type Scale'>
               </div>
-              <div class='table_layout'>
-                <div class='table_cell'>
-                  <h3>Google Webfont</h3>
+              <div class='field'>
+                <div class='table_layout'>
+                  <div class='table_cell'>
+                    <label>Google Webfont</label>
+                  </div>
+                  <div class='table_cell text_right'>
+                    <a class='font_small' href='http://www.google.com/fonts/' tabindex='-1' target='_blank'>Find Webfont</a>
+                  </div>
                 </div>
-                <div class='table_cell text_right'>
-                  <a class='font_small' href='http://www.google.com/fonts/' tabindex='-1' target='_blank'>Find Webfont</a>
-                </div>
+                <input class='web_font input_select_all' type='text' value='Libre+Baskerville'>
               </div>
               <div class='field'>
-                <label>Paste Tag</label>
-                <input class='web_font input_select_all' type='text' value="&lt;link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'&gt;">
+                <label>font-family:</label>
+                <input class='web_font_name input_select_all' type='text' value="'Libre Baskerville', serif;">
               </div>
-              <div class='field'>
-                <label>Paste CSS</label>
-                <input class='web_font_name input_select_all' type='text' value="font-family: 'Libre Baskerville', serif;">
+              <div class='param_url font_small text_light'>
+                http://type-scale.com/?size=<span class="param_size">24</span>&amp;scale=<span class="param_scale">1.500</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;font=<span class="param_font">Libre+Baskerville</span>&amp;css=<span class="param_css">'Libre Baskerville', serif;</span>
               </div>
             </div>
           </form>
