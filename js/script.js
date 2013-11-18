@@ -51,19 +51,19 @@ $(document).ready(function() {
   setPreviewText();
 
   function setTag() {
-    if (getQueryVariable('font') !== false) {
-      $('.web_font').val(getQueryVariable('font'));
-      $('.webfont_url').attr('href', 'http://fonts.googleapis.com/css?family=' + getQueryVariable('font'));
-      $('.param_font').text(getQueryVariable('font'));
+    if (getQueryVariable('webfont') !== false) {
+      $('.web_font').val(getQueryVariable('webfont'));
+      $('.webfont_url').attr('href', 'http://fonts.googleapis.com/css?family=' + getQueryVariable('webfont'));
+      $('.param_font').text(getQueryVariable('webfont'));
     };
   };
   setTag();
 
   function setCss() {
-    if (getQueryVariable('css') !== false) {
-      $('.web_font_name').val(getQueryVariable('css'));
-      $('.scale_webfont').attr('style', "font-family:" + getQueryVariable('css'));
-      $('.param_css').text(getQueryVariable('css'));
+    if (getQueryVariable('font-family') !== false) {
+      $('.web_font_name').val(getQueryVariable('font-family'));
+      $('.scale_webfont').attr('style', "font-family:" + getQueryVariable('font-family'));
+      $('.param_css').text(getQueryVariable('font-family'));
     };
   };
   setCss();
