@@ -47,7 +47,7 @@
             .box
               .field
                 %label Base Size
-                %input.base_size.input_select_all{type: 'text', style: 'max-width:4em;'}
+                %input.base_size{type: 'text', style: 'max-width:4em;'}
                 %span.text_muted
                   px = <span class="base_em">1.5</span>em
 
@@ -74,7 +74,7 @@
 
               .field
                 %label Preview Text
-                %input.preview_text.input_select_all{type: 'text', value: 'A Visual Type Scale'}
+                %input.preview_text{type: 'text', value: 'A Visual Type Scale'}
 
               .field
                 .table_layout
@@ -83,11 +83,11 @@
 
                   .table_cell.text_right
                     %a.font_small{href: 'http://www.google.com/fonts/', target: '_blank', tabindex: '-1'} Find Webfont
-                %input.web_font.input_select_all{type: 'text', value: "Libre+Baskerville"}
+                %input.web_font{type: 'text', value: "Libre+Baskerville"}
 
               .field
                 %label font-family:
-                %input.web_font_name.input_select_all{type: 'text', value: "'Libre Baskerville', serif;"}
+                %input.web_font_name{type: 'text', value: "'Libre Baskerville', serif;"}
 
               .param_url.font_small.text_light
                 http://type-scale.com/?size=<span class="param_size">24</span>&amp;scale=<span class="param_scale">1.500</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;font=<span class="param_font">Libre+Baskerville</span>&amp;css=<span class="param_css">'Libre Baskerville', serif;</span>
