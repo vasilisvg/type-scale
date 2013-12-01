@@ -9,6 +9,11 @@ $(document).ready(function() {
     $('.article_preview').toggleClass('article_preview_open');
   });
 
+  $('.more_options_button').click(function() {
+    $('.more_options_button .fa').toggleClass('fa-times').toggleClass('fa-chevron-down');
+    setPreviewHeight();
+  });
+
   $('.param_url').hover(function() {
     $(this).attr('href', $(this).text())
   });
@@ -141,8 +146,33 @@ $(document).ready(function() {
     scaleCalc();
   };
 
-  function scaleCalc() {
+  function setFontColor() {
+    if (getQueryVariable('font-color') !== false) {
+      $('.font_color').val(getQueryVariable('font-color'));
+      $('head').append('<style type="text/css">.article_preview_open {color:#' + getQueryVariable('font-color') + ';}</style>');
+      $('.param_font_color').text(getQueryVariable('font-color'));
+    };
+  };
+  setFontColor();
+  $('.font_color').bind("change paste keyup", function() {
+    $('head').append('<style type="text/css">.article_preview_open {color:#' + $(this).val() + ';}</style>');
+    $('.param_font_color').text($(this).val());
+  });
 
+  function setBackgroundColor() {
+    if (getQueryVariable('background-color') !== false) {
+      $('.background_color').val(getQueryVariable('background-color'));
+      $('head').append('<style type="text/css">.article_preview_open {background-color:#' + getQueryVariable('background-color') + ';}</style>');
+      $('.param_background_color').text(getQueryVariable('background-color'));
+    };
+  };
+  setBackgroundColor();
+  $('.background_color').bind("change paste keyup", function() {
+    $('head').append('<style type="text/css">.article_preview_open {background-color:#' + $(this).val() + ';}</style>');
+    $('.param_background_color').text($(this).val());
+  });
+
+  function scaleCalc() {
     function scaleHigh() {
       a = baseSize;
       b = scaleRatio;

@@ -93,7 +93,7 @@
                 %label Permalink
                 .font_small.overflow_gradient
                   %a.param_url
-                    http://type-scale.com/?size=<span class="param_size">20</span>&amp;scale=<span class="param_scale">1.414</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Libre+Baskerville</span>&amp;font-family=<span class="param_css">'Libre Baskerville', serif;</span>&amp;font-family-headers=<span class="param_font_headers">'Libre Baskerville', serif;</span>
+                    http://type-scale.com/?size=<span class="param_size">20</span>&amp;scale=<span class="param_scale">1.414</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Libre+Baskerville</span>&amp;font-family=<span class="param_css">'Libre Baskerville', serif;</span>&amp;font-family-headers=<span class="param_font_headers">'Libre Baskerville', serif;</span>&amp;background-color=<span class="param_background_color">ffffff</span>&amp;font-color=<span class="param_font_color">333333</span>
 
           <!-- AdPacks.com Zone Code -->
           <div id="bsap_1291994" class="bsarocks bsap_0539c68d8c24c7e870a450d4e50e9e0e"></div>
@@ -221,15 +221,25 @@
     .article_preview
       .article_preview_button.fa.fa-chevron-left.fa-lg.fa-fw
       .article_preview_inner
-        -#%div
-          %span.fa.fa-angle-down.fa-lg.text_light{data: {'toggle' => '.js_article_options'}}
+        %span.more_options_button.text_light{data: {'toggle' => '.js_article_options'}}
+          %span.fa.fa-fw.fa-chevron-down
           Options
 
-        .js_article_options
+        .js_article_options.hide
+          .break_medium
           %form
             .field
               %label font-family: <em>(headers)</em>
               %input.font_family_headers{type: 'text', value: "'Libre Baskerville', serif;"}
+
+            .cols.field
+              .col_half
+                %label Background Color
+                %input.background_color{type: 'text', value: 'ffffff'}
+
+              .col_half
+                %label Font Color
+                %input.font_color{type: 'text', value: '333333'}
 
         %hr
 

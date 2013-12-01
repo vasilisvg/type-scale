@@ -85,7 +85,7 @@
                 <label>Permalink</label>
                 <div class='font_small overflow_gradient'>
                   <a class='param_url'>
-                    http://type-scale.com/?size=<span class="param_size">20</span>&amp;scale=<span class="param_scale">1.414</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Libre+Baskerville</span>&amp;font-family=<span class="param_css">'Libre Baskerville', serif;</span>&amp;font-family-headers=<span class="param_font_headers">'Libre Baskerville', serif;</span>
+                    http://type-scale.com/?size=<span class="param_size">20</span>&amp;scale=<span class="param_scale">1.414</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Libre+Baskerville</span>&amp;font-family=<span class="param_css">'Libre Baskerville', serif;</span>&amp;font-family-headers=<span class="param_font_headers">'Libre Baskerville', serif;</span>&amp;background-color=<span class="param_background_color">ffffff</span>&amp;font-color=<span class="param_font_color">333333</span>
                   </a>
                 </div>
               </div>
@@ -247,11 +247,26 @@
     <div class='article_preview'>
       <div class='article_preview_button fa fa-chevron-left fa-lg fa-fw'></div>
       <div class='article_preview_inner'>
-        <div class='js_article_options'>
+        <span class='more_options_button text_light' data-toggle='.js_article_options'>
+          <span class='fa fa-fw fa-chevron-down'></span>
+          Options
+        </span>
+        <div class='js_article_options hide'>
+          <div class='break_medium'></div>
           <form>
             <div class='field'>
               <label>font-family: <em>(headers)</em></label>
               <input class='font_family_headers' type='text' value="'Libre Baskerville', serif;">
+            </div>
+            <div class='cols field'>
+              <div class='col_half'>
+                <label>Background Color</label>
+                <input class='background_color' type='text' value='ffffff'>
+              </div>
+              <div class='col_half'>
+                <label>Font Color</label>
+                <input class='font_color' type='text' value='333333'>
+              </div>
             </div>
           </form>
         </div>
