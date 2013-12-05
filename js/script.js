@@ -36,6 +36,8 @@ $(document).ready(function() {
   return(false);
   };
 
+
+
   function setBaseSize() {
     if (getQueryVariable('size') === false) {
       baseSize = 1.25;
@@ -51,60 +53,6 @@ $(document).ready(function() {
   };
   setBaseSize();
 
-  function setScale() {
-    if (getQueryVariable('scale') === false) {
-      scaleRatio = 1.414;
-    }
-    else {
-      scaleRatio = getQueryVariable('scale');
-      $('.font_scale').val(getQueryVariable('scale'));
-      $('.param_scale').text(getQueryVariable('scale'));
-    };
-    scaleCalc();
-  };
-  setScale();
-
-  function setPreviewText() {
-    if (getQueryVariable('text') !== false) {
-      $('.preview_text').val(getQueryVariable('text'));
-      $('.scale_preview_text').text(getQueryVariable('text'));
-      $('.param_text').text(getQueryVariable('text'));
-    };
-  };
-  setPreviewText();
-
-  function setTag() {
-    if (getQueryVariable('webfont') !== false) {
-      $('.web_font').val(getQueryVariable('webfont'));
-      $('.webfont_url').attr('href', 'http://fonts.googleapis.com/css?family=' + getQueryVariable('webfont'));
-      $('.param_font').text(getQueryVariable('webfont'));
-    };
-  };
-  setTag();
-
-  function setCss() {
-    if (getQueryVariable('font-family') !== false) {
-      $('.web_font_name').val(getQueryVariable('font-family'));
-      $('.scale_webfont, .article_content').attr('style', "font-family:" + getQueryVariable('font-family'));
-      $('.param_css').text(getQueryVariable('font-family'));
-    };
-  };
-  setCss();
-
-  function setFontHeaders() {
-    if (getQueryVariable('font-family-headers') !== false) {
-      $('.font_family_headers').val(getQueryVariable('font-family-headers'));
-      $('.style_font_headers').html('.article_header {font-family:' + getQueryVariable('font-family-headers') + ';}');
-      $('.param_font_headers').text(getQueryVariable('font-family-headers'));
-    };
-  };
-  setFontHeaders();
-  $('.font_family_headers').bind("change paste keyup", function() {
-    $('.style_font_headers').html('.article_header {font-family:' + $(this).val() + ';}');
-    $('.param_font_headers').text(encodeURIComponent($(this).val()));
-    setPreviewHeight();
-  });
-
   $('.base_size').bind("change paste keyup", function() {
     if($.isNumeric($(this).val())){
       baseSize = $(this).val() / 16;
@@ -118,10 +66,41 @@ $(document).ready(function() {
     scaleSelect();
   });
 
+
+
+  function setScale() {
+    if (getQueryVariable('scale') === false) {
+      scaleRatio = 1.414;
+    }
+    else {
+      scaleRatio = getQueryVariable('scale');
+      $('.font_scale').val(getQueryVariable('scale'));
+      $('.param_scale').text(getQueryVariable('scale'));
+    };
+    scaleCalc();
+  };
+  setScale();
+
   $('.font_scale').bind("change paste keyup", function() {
     scaleSelect();
     $('.param_scale').text($(this).val());
   });
+
+  function scaleSelect() {
+    scaleRatio = $('.font_scale').val();
+    scaleCalc();
+  };
+
+
+
+  function setPreviewText() {
+    if (getQueryVariable('text') !== false) {
+      $('.preview_text').val(getQueryVariable('text'));
+      $('.scale_preview_text').text(getQueryVariable('text'));
+      $('.param_text').text(getQueryVariable('text'));
+    };
+  };
+  setPreviewText();
 
   $('.preview_text').bind("change paste keyup", function() {
     previewText = $(this).val();
@@ -129,10 +108,32 @@ $(document).ready(function() {
     $('.param_text').text(encodeURIComponent($(this).val()));
   });
 
+
+
+  function setTag() {
+    if (getQueryVariable('webfont') !== false) {
+      $('.web_font').val(getQueryVariable('webfont'));
+      $('.webfont_url').attr('href', 'http://fonts.googleapis.com/css?family=' + getQueryVariable('webfont'));
+      $('.param_font').text(getQueryVariable('webfont'));
+    };
+  };
+  setTag();
+
   $('.web_font').bind("change paste keyup", function() {
     $('.webfont_url').attr('href', 'http://fonts.googleapis.com/css?family=' + $(this).val());
     $('.param_font').text(encodeURIComponent($(this).val()));
   });
+
+
+
+  function setCss() {
+    if (getQueryVariable('font-family') !== false) {
+      $('.web_font_name').val(getQueryVariable('font-family'));
+      $('.scale_webfont, .article_content').attr('style', "font-family:" + getQueryVariable('font-family'));
+      $('.param_css').text(getQueryVariable('font-family'));
+    };
+  };
+  setCss();
 
   $('.web_font_name').bind("change paste keyup", function() {
     webFontName = $(this).val();
@@ -140,10 +141,24 @@ $(document).ready(function() {
     $('.param_css').text(encodeURIComponent($(this).val()));
   });
 
-  function scaleSelect() {
-    scaleRatio = $('.font_scale').val();
-    scaleCalc();
+
+
+  function setFontHeaders() {
+    if (getQueryVariable('font-family-headers') !== false) {
+      $('.font_family_headers').val(getQueryVariable('font-family-headers'));
+      $('.style_font_headers').html('.article_header {font-family:' + getQueryVariable('font-family-headers') + ';}');
+      $('.param_font_headers').text(getQueryVariable('font-family-headers'));
+    };
   };
+
+  setFontHeaders();
+  $('.font_family_headers').bind("change paste keyup", function() {
+    $('.style_font_headers').html('.article_header {font-family:' + $(this).val() + ';}');
+    $('.param_font_headers').text(encodeURIComponent($(this).val()));
+    setPreviewHeight();
+  });
+
+
 
   function setBackgroundColor() {
     if (getQueryVariable('background-color') !== false) {
@@ -153,10 +168,13 @@ $(document).ready(function() {
     };
   };
   setBackgroundColor();
+
   $('.background_color').bind("change paste keyup", function() {
     $('.style_background_color').html('.article_preview_open {background-color:' + $(this).val() + ';}');
     $('.param_background_color').text(encodeURIComponent($(this).val()));
   });
+
+
 
   function setFontColor() {
     if (getQueryVariable('font-color') !== false) {
@@ -165,11 +183,14 @@ $(document).ready(function() {
       $('.param_font_color').text(getQueryVariable('font-color'));
     };
   };
+
   setFontColor();
   $('.font_color').bind("change paste keyup", function() {
     $('.style_font_color').html('.article_preview_open {color:' + $(this).val() + ';}');
     $('.param_font_color').text(encodeURIComponent($(this).val()));
   });
+
+
 
   function scaleCalc() {
     function scaleHigh() {
