@@ -28,11 +28,10 @@ $(document).ready(function() {
   // });
 
   function getQueryVariable(variable) {
-    var query = unescape(window.location.search.substring(1));
-    var vars = query.split("&");
+    var vars = window.location.search.substring(1).split("&");
     for (var i=0;i<vars.length;i++) {
       var pair = vars[i].split("=");
-      if(pair[0] == variable){return pair[1];}
+      if(pair[0] == variable){return decodeURIComponent(pair[1]);}
   }
   return(false);
   };
@@ -102,7 +101,7 @@ $(document).ready(function() {
   setFontHeaders();
   $('.font_family_headers').bind("change paste keyup", function() {
     $('.style_font_headers').html('.article_header {font-family:' + $(this).val() + ';}');
-    $('.param_font_headers').text($(this).val());
+    $('.param_font_headers').text(encodeURIComponent($(this).val()));
     setPreviewHeight();
   });
 
@@ -127,18 +126,18 @@ $(document).ready(function() {
   $('.preview_text').bind("change paste keyup", function() {
     previewText = $(this).val();
     $('.scale_preview_text').text(previewText);
-    $('.param_text').text($(this).val());
+    $('.param_text').text(encodeURIComponent($(this).val()));
   });
 
   $('.web_font').bind("change paste keyup", function() {
     $('.webfont_url').attr('href', 'http://fonts.googleapis.com/css?family=' + $(this).val());
-    $('.param_font').text($(this).val());
+    $('.param_font').text(encodeURIComponent($(this).val()));
   });
 
   $('.web_font_name').bind("change paste keyup", function() {
     webFontName = $(this).val();
     $('.scale_webfont, .article_content').attr('style', "font-family:" + webFontName);
-    $('.param_css').text($(this).val());
+    $('.param_css').text(encodeURIComponent($(this).val()));
   });
 
   function scaleSelect() {
@@ -146,30 +145,30 @@ $(document).ready(function() {
     scaleCalc();
   };
 
-  // function setBackgroundColor() {
-  //   if (getQueryVariable('background-color') !== false) {
-  //     $('.background_color').val(getQueryVariable('background-color'));
-  //     $('.style_background_color').html('.article_preview_open {background-color:' + getQueryVariable('background-color') + ';}');
-  //     $('.param_background_color').text(getQueryVariable('background-color'));
-  //   };
-  // };
-  // setBackgroundColor();
+  function setBackgroundColor() {
+    if (getQueryVariable('background-color') !== false) {
+      $('.background_color').val(getQueryVariable('background-color'));
+      $('.style_background_color').html('.article_preview_open {background-color:' + getQueryVariable('background-color') + ';}');
+      $('.param_background_color').text(getQueryVariable('background-color'));
+    };
+  };
+  setBackgroundColor();
   $('.background_color').bind("change paste keyup", function() {
     $('.style_background_color').html('.article_preview_open {background-color:' + $(this).val() + ';}');
-    //$('.param_background_color').text($(this).val());
+    $('.param_background_color').text(encodeURIComponent($(this).val()));
   });
 
-  // function setFontColor() {
-  //   if (getQueryVariable('font-color') !== false) {
-  //     $('.font_color').val(getQueryVariable('font-color'));
-  //     $('.style_font_color').html('.article_preview_open {color:' + getQueryVariable('font-color') + ';}');
-  //     $('.param_font_color').text(getQueryVariable('font-color'));
-  //   };
-  // };
-  // setFontColor();
+  function setFontColor() {
+    if (getQueryVariable('font-color') !== false) {
+      $('.font_color').val(getQueryVariable('font-color'));
+      $('.style_font_color').html('.article_preview_open {color:' + getQueryVariable('font-color') + ';}');
+      $('.param_font_color').text(getQueryVariable('font-color'));
+    };
+  };
+  setFontColor();
   $('.font_color').bind("change paste keyup", function() {
     $('.style_font_color').html('.article_preview_open {color:' + $(this).val() + ';}');
-    //$('.param_font_color').text($(this).val());
+    $('.param_font_color').text(encodeURIComponent($(this).val()));
   });
 
   function scaleCalc() {
