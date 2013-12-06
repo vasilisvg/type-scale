@@ -198,8 +198,8 @@
               %a.remove_border_bottom{href: 'https://twitter.com/jeremybchurch'}
                 %span.fa.fa-twitter.fa-lg
             %li
-              %a.remove_border_bottom{href: 'https://www.google.com/+JeremyChurch'}
-                %span.fa.fa-google-plus-square.fa-lg
+              %a.remove_border_bottom{href: 'http://j.eremy.net/'}
+                %span.fa.fa-globe.fa-lg
             %li
               %a.remove_border_bottom{href: 'https://github.com/jeremychurch/type-scale'}
                 %span.fa.fa-github-alt.fa-lg
@@ -208,9 +208,7 @@
           A type tool by
           %ul.inline_list
             %li
-              %a{href: 'http://j.eremy.net/'} Jeremy Church
-            -#%li
-              %a{href: 'https://twitter.com/jeremybchurch'} @jeremybchurch
+              %a{href: 'https://twitter.com/jeremybchurch'} Jeremy Church
 
       .cols
         .col_side.media_xs_hide &nbsp;
@@ -246,8 +244,8 @@
                 %a.remove_border_bottom{href: 'https://twitter.com/jeremybchurch'}
                   %span.fa.fa-twitter.fa-2x
               %li
-                %a.remove_border_bottom{href: 'https://www.google.com/+JeremyChurch'}
-                  %span.fa.fa-google-plus-square.fa-2x
+                %a.remove_border_bottom{href: 'http://j.eremy.net/'}
+                  %span.fa.fa-globe.fa-2x
               %li
                 %a.remove_border_bottom{href: 'https://github.com/jeremychurch/type-scale'}
                   %span.fa.fa-github-alt.fa-2x
@@ -271,14 +269,16 @@
               %label Header Font Family
               %input.font_family_headers{type: 'text'}
 
-            .cols.field
+            .cols.cols_fields
               .col_half
-                %label Background Color
-                %input.background_color{type: 'text', value: 'white'}
+                .field
+                  %label Background Color
+                  %input.background_color{type: 'text', value: 'white'}
 
               .col_half
-                %label Font Color
-                %input.font_color{type: 'text', value: '#333'}
+                .field
+                  %label Font Color
+                  %input.font_color{type: 'text', value: '#333'}
 
         %hr
 
