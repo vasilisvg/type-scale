@@ -97,7 +97,7 @@
                 %label Permalink
                 .font_small.overflow_gradient
                   %a.param_url
-                    http://type-scale.com/?size=<span class="param_size">20</span>&amp;scale=<span class="param_scale">1.414</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Libre+Baskerville</span>&amp;font-family=<span class="param_css">'Libre Baskerville', serif</span>&amp;font-family-headers=<span class="param_font_headers"></span>&amp;background-color=<span class="param_background_color">white</span>&amp;font-color=<span class="param_font_color">%23333333</span>
+                    http://type-scale.com/?size=<span class="param_size">20</span>&amp;scale=<span class="param_scale">1.414</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Libre+Baskerville</span>&amp;font-family=<span class="param_css">'Libre Baskerville', serif</span>&amp;font-family-headers=<span class="param_font_headers"></span>&amp;background-color=<span class="param_background_color">white</span>&amp;font-color=<span class="param_font_color">%23333</span>
 
           <!-- AdPacks.com Zone Code -->
           <div id="bsap_1291994" class="bsarocks bsap_0539c68d8c24c7e870a450d4e50e9e0e"></div>
@@ -154,6 +154,41 @@
                 %span.scale_low_label.text_muted.font_small
               .table_cell.scale_webfont
                 %span.scale_low.scale_preview_text A Visual Type Scale
+
+          %hr
+
+          %span.btn.font_small.expand_down{data: {'toggle' => '.js_generated_css'}}
+            %span.fa.fa-fw.fa-chevron-down
+            Grab the CSS
+
+          .js_generated_css.hide
+            .break_small
+            .box.content_width
+              %pre.font_small{contenteditable: 'true', onclick: "document.execCommand('selectAll',false,null)"}
+                %code
+                  :preserve
+                    body {
+                      background-color: <span class="css_background_color">white</span>;
+                      font-size: <span class="css_font_size"></span>em;
+                      font-family: <span class="css_font_family">'Libre Baskerville', serif</span>;
+                      line-height: 1.45;
+                      color: <span class="css_color">#333</span>;
+                    }
+
+                    h1, h2, h3, h4 {
+                      margin: 1.414em 0 0.5em;<span class="css_header_font"></span>
+                      line-height: 1.2;
+                    }
+
+                    h1 {font-size: <span class="css_header_size"></span>em;}
+
+                    h2 {font-size: <span class="css_header_size"></span>em;}
+
+                    h3 {font-size: <span class="css_header_size"></span>em;}
+
+                    h4 {font-size: <span class="css_header_size"></span>em;}
+
+                    .font_small {font-size: <span class="css_small_size"></span>em;}
 
     .content.container
       .cols.stage_footer
@@ -225,7 +260,7 @@
     .article_preview
       .article_preview_button.fa.fa-chevron-left.fa-lg.fa-fw
       .article_preview_inner
-        %span.more_options_button.text_light{data: {'toggle' => '.js_article_options'}}
+        %span.btn.font_small.expand_down.more_options_button{data: {'toggle' => '.js_article_options'}}
           %span.fa.fa-fw.fa-chevron-down
           Options
 
@@ -243,7 +278,7 @@
 
               .col_half
                 %label Font Color
-                %input.font_color{type: 'text', value: '#333333'}
+                %input.font_color{type: 'text', value: '#333'}
 
         %hr
 

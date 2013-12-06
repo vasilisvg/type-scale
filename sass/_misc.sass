@@ -82,6 +82,19 @@ li
       margin-right: 0
       padding-right: 0
 
+pre
+  //padding: $app-padding-small
+  //background-color: $app-gray-light
+  font-family: "Courier New", Courier, monospace
+  line-height: 1.2
+  color: $app-brown
+  white-space: pre-wrap
+  cursor: text
+  // ::selection
+  //   background-color: #FFF80D
+  // ::-moz-selection
+  //   background-color: #FFF80D
+
 .box
   @include box-sizing(border-box)
   position: relative
@@ -114,16 +127,16 @@ hr
 
 .btn, input[type="submit"]
   display: inline-block
-  border: 2px solid $app-color-one
-  padding: 0.45em 1.4em //0.35em 1.3em
-  color: #fff
-  background-color: $app-color-one
-  @include border-radius(4px)
-  font-size: $app-font-small
+  border: 1px solid lighten($app-brown,25%)
+  padding: 0.6em $app-padding-small
+  color: $app-brown
+  @include border-radius(5px)
+  cursor: pointer
+  @include transition(all 0.3s ease 0s)
   &:hover
-    background-color: transparent
-    border-color: #7AB9E9
-    color: darken($app-color-one, 7%)
+    //background-color: $app-font-color
+    border-color: $app-font-color
+    color: $app-font-color
   +
     .btn, input[type="submit"]
       margin-left: 0.3em
