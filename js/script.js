@@ -9,9 +9,12 @@ $(document).ready(function() {
     $('.article_preview').toggleClass('article_preview_open');
   });
 
-  $('.more_options_button').click(function() {
-    $('.more_options_button .fa').toggleClass('fa-times').toggleClass('fa-chevron-down');
-    setPreviewHeight();
+  $('.expand_down').click(function(e) {
+    e.preventDefault();
+    $(this).children('.fa').toggleClass('fa-times').toggleClass('fa-chevron-down');
+    if ($(this).hasClass('more_options_button')) {
+      setPreviewHeight();
+    };
   });
 
   $('.param_url').hover(function() {
@@ -42,12 +45,14 @@ $(document).ready(function() {
     if (getQueryVariable('size') === false) {
       baseSize = 1.25;
       $('.base_size').val(20);
+      $('.css_font_size').text(1.25);
     }
     else {
       baseSize = getQueryVariable('size') / 16;
       $('.base_size').val(getQueryVariable('size'));
       $('.article_container').css('font-size', Math.round(baseSize*1000)/1000 + 'em');
       $('.param_size').text(getQueryVariable('size'));
+      $('.css_font_size').text(Math.round(baseSize*1000)/1000);
     };
     $('.base_em').text(Math.round(baseSize*1000)/1000);
   };
@@ -61,9 +66,10 @@ $(document).ready(function() {
       baseSize = 0;
     };
     $('.base_em').text(Math.round(baseSize*1000)/1000);
+    scaleSelect();
     $('.param_size').text($(this).val());
     $('.article_container').css('font-size', Math.round(baseSize*1000)/1000 + 'em');
-    scaleSelect();
+    $('.css_font_size').text(Math.round(baseSize*1000)/1000);
   });
 
 
@@ -131,6 +137,7 @@ $(document).ready(function() {
       $('.web_font_name').val(getQueryVariable('font-family'));
       $('.scale_webfont, .article_content').attr('style', "font-family:" + getQueryVariable('font-family'));
       $('.param_css').text(getQueryVariable('font-family'));
+      $('.css_font_family').text(getQueryVariable('font-family'));
     };
   };
   setCss();
@@ -139,6 +146,7 @@ $(document).ready(function() {
     webFontName = $(this).val();
     $('.scale_webfont, .article_content').attr('style', "font-family:" + webFontName);
     $('.param_css').text(encodeURIComponent($(this).val()));
+    $('.css_font_family').text($(this).val());
   });
 
 
@@ -148,6 +156,7 @@ $(document).ready(function() {
       $('.font_family_headers').val(getQueryVariable('font-family-headers'));
       $('.style_font_headers').html('.article_header {font-family:' + getQueryVariable('font-family-headers') + ';}');
       $('.param_font_headers').text(getQueryVariable('font-family-headers'));
+      $('.css_header_font').html('<br>  font-family: ' + getQueryVariable('font-family-headers') + ';');
     };
   };
 
@@ -155,6 +164,9 @@ $(document).ready(function() {
   $('.font_family_headers').bind("change paste keyup", function() {
     $('.style_font_headers').html('.article_header {font-family:' + $(this).val() + ';}');
     $('.param_font_headers').text(encodeURIComponent($(this).val()));
+    if($(this).val() !== false) {
+      $('.css_header_font').html('<br>  font-family: ' + $(this).val() + ';');
+    };
     setPreviewHeight();
   });
 
@@ -165,6 +177,7 @@ $(document).ready(function() {
       $('.background_color').val(getQueryVariable('background-color'));
       $('.style_background_color').html('.article_preview_open {background-color:' + getQueryVariable('background-color') + ';}');
       $('.param_background_color').text(getQueryVariable('background-color'));
+      $('.css_background_color').text(getQueryVariable('background-color'));
     };
   };
   setBackgroundColor();
@@ -172,6 +185,7 @@ $(document).ready(function() {
   $('.background_color').bind("change paste keyup", function() {
     $('.style_background_color').html('.article_preview_open {background-color:' + $(this).val() + ';}');
     $('.param_background_color').text(encodeURIComponent($(this).val()));
+    $('.css_background_color').text($(this).val());
   });
 
 
@@ -181,6 +195,7 @@ $(document).ready(function() {
       $('.font_color').val(getQueryVariable('font-color'));
       $('.style_font_color').html('.article_preview_open {color:' + getQueryVariable('font-color') + ';}');
       $('.param_font_color').text(getQueryVariable('font-color'));
+      $('.css_color').text(getQueryVariable('font-color'));
     };
   };
 
@@ -188,6 +203,7 @@ $(document).ready(function() {
   $('.font_color').bind("change paste keyup", function() {
     $('.style_font_color').html('.article_preview_open {color:' + $(this).val() + ';}');
     $('.param_font_color').text(encodeURIComponent($(this).val()));
+    $('.css_color').text($(this).val());
   });
 
 
@@ -229,6 +245,18 @@ $(document).ready(function() {
       });
     };
 
+    function cssHeader() {
+      a = 1;
+      b = scaleRatio;
+      result = 1;
+
+      $($('.css_header_size').get().reverse()).each(function(index) {
+        result = a*b;
+        a = result;
+        $(this).text(Math.round(result*1000)/1000);
+      });
+    };
+
     function scaleLow() {
       a = baseSize;
       b = scaleRatio;
@@ -253,11 +281,25 @@ $(document).ready(function() {
       });
     };
 
+    function cssFontSmall() {
+      a = 1;
+      b = scaleRatio;
+      result = 1;
+
+      $('.css_small_size').each(function(index) {
+        result = a/b;
+        a = result;
+        $(this).text(Math.round(result*1000)/1000);
+      });
+    };
+
     scaleHigh();
     scaleHighLabel();
     articleHeader();
+    cssHeader();
     scaleLow();
     scaleLowLabel();
+    cssFontSmall();
     setPreviewHeight();
   };
 
