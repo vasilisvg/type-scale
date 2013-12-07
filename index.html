@@ -18,7 +18,9 @@
     ga('create', 'UA-409712-10', 'type-scale.com');
     ga('send', 'pageview');
     </script>
+    <style class='style_weight' type='text/css'></style>
     <style class='style_font_headers' type='text/css'></style>
+    <style class='style_weight_headers' type='text/css'></style>
     <style class='style_background_color' type='text/css'></style>
     <style class='style_font_color' type='text/css'></style>
   </head>
@@ -80,15 +82,25 @@
                 </div>
                 <input class='web_font' type='text' value='Libre+Baskerville'>
               </div>
-              <div class='field'>
-                <label>Font Family</label>
-                <input class='web_font_name' type='text' value="'Libre Baskerville', serif">
+              <div class='cols cols_fields'>
+                <div class='col_two_thirds'>
+                  <div class='field'>
+                    <label>Font Family</label>
+                    <input class='web_font_name' type='text' value="'Libre Baskerville', serif">
+                  </div>
+                </div>
+                <div class='col_one_third'>
+                  <div class='field'>
+                    <label>Weight</label>
+                    <input class='i_weight' type='text' value='400'>
+                  </div>
+                </div>
               </div>
               <div class='field'>
                 <label>Permalink</label>
                 <div class='font_small overflow_gradient'>
                   <a class='param_url'>
-                    http://type-scale.com/?size=<span class="param_size">20</span>&amp;scale=<span class="param_scale">1.414</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Libre+Baskerville</span>&amp;font-family=<span class="param_css">'Libre Baskerville', serif</span>&amp;font-family-headers=<span class="param_font_headers"></span>&amp;background-color=<span class="param_background_color">white</span>&amp;font-color=<span class="param_font_color">%23333</span>
+                    http://type-scale.com/?size=<span class="param_size">20</span>&amp;scale=<span class="param_scale">1.414</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Libre+Baskerville</span>&amp;font-family=<span class="param_css">'Libre Baskerville', serif</span>&amp;font-weight=<span class="param_weight">400</span>&amp;font-family-headers=<span class="param_font_headers"></span>&amp;font-weight-headers=<span class="param_weight_headers">inherit</span>&amp;background-color=<span class="param_background_color">white</span>&amp;font-color=<span class="param_font_color">%23333</span>
                   </a>
                 </div>
               </div>
@@ -176,7 +188,7 @@
           <div class='js_generated_css hide'>
             <div class='break_small'></div>
             <div class='box content_width'>
-              <pre class='font_small' contenteditable='true' onclick="document.execCommand('selectAll',false,null)"><code>body {&#x000A;  background-color: <span class="css_background_color">white</span>;&#x000A;  font-size: <span class="css_font_size"></span>em;&#x000A;  font-family: <span class="css_font_family">'Libre Baskerville', serif</span>;&#x000A;  line-height: 1.45;&#x000A;  color: <span class="css_color">#333</span>;&#x000A;}&#x000A;&#x000A;h1, h2, h3, h4 {&#x000A;  margin: 1.414em 0 0.5em;<span class="css_header_font"></span>&#x000A;  line-height: 1.2;&#x000A;}&#x000A;&#x000A;h1 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h2 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h3 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h4 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;.font_small {font-size: <span class="css_small_size"></span>em;}&#x000A;</code></pre>
+              <pre class='font_small' contenteditable='true' onclick="document.execCommand('selectAll',false,null)"><code>body {&#x000A;  background-color: <span class="css_background_color">white</span>;&#x000A;  font-size: <span class="css_font_size"></span>em;&#x000A;  font-family: <span class="css_font_family">'Libre Baskerville', serif</span>;&#x000A;  font-weight: <span class="css_weight">400</span>;&#x000A;  line-height: 1.45;&#x000A;  color: <span class="css_color">#333</span>;&#x000A;}&#x000A;&#x000A;h1, h2, h3, h4 {&#x000A;  margin: 1.414em 0 0.5em;<span class="css_font_headers"></span>&#x000A;  font-weight: <span class="css_weight_headers">inherit</span>;&#x000A;  line-height: 1.2;&#x000A;}&#x000A;&#x000A;h1 {&#x000A;  margin-top: 0;&#x000A;  font-size: <span class="css_header_size"></span>em;&#x000A;}&#x000A;&#x000A;h2 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h3 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h4 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;.font_small {font-size: <span class="css_small_size"></span>em;}&#x000A;</code></pre>
             </div>
           </div>
         </div>
@@ -268,9 +280,19 @@
         <div class='js_article_options hide'>
           <div class='break_medium'></div>
           <form>
-            <div class='field'>
-              <label>Header Font Family</label>
-              <input class='font_family_headers' type='text'>
+            <div class='cols cols_fields'>
+              <div class='col_two_thirds'>
+                <div class='field'>
+                  <label>Header Font Family</label>
+                  <input class='font_family_headers' type='text'>
+                </div>
+              </div>
+              <div class='col_one_third'>
+                <div class='field'>
+                  <label>Weight</label>
+                  <input class='i_weight_headers' type='text' value='inherit'>
+                </div>
+              </div>
             </div>
             <div class='cols cols_fields'>
               <div class='col_half'>

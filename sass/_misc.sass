@@ -88,10 +88,12 @@ pre
   color: $app-brown
   white-space: pre-wrap
   cursor: text
-  // ::selection
-  //   background-color: #FFF80D
-  // ::-moz-selection
-  //   background-color: #FFF80D
+  ::selection
+    background-color: $app-color-one
+    color: #eee
+  ::-moz-selection
+    background-color: $app-color-one
+    color: #eee
 
 .box
   @include box-sizing(border-box)
