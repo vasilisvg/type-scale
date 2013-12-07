@@ -151,21 +151,57 @@ $(document).ready(function() {
 
 
 
+  function setFontWeight() {
+    if (getQueryVariable('font-weight') !== false) {
+      $('.i_weight').val(getQueryVariable('font-weight'));
+      $('.style_weight').html('.scale_webfont, .article_container {font-weight:' + getQueryVariable('font-weight') + ';}');
+      $('.param_weight').text(getQueryVariable('font-weight'));
+      $('.css_weight').text(getQueryVariable('font-weight'));
+    };
+  };
+  setFontWeight();
+
+  $('.i_weight').bind("change paste keyup", function() {
+    $('.style_weight').html('.scale_webfont, .article_container {font-weight:' + $(this).val() + ';}');
+    $('.param_weight').text($(this).val());
+    $('.css_weight').text($(this).val());
+  });
+
+
+
+  function setFontWeightHeaders() {
+    if (getQueryVariable('font-weight-headers') !== false) {
+      $('.i_weight_headers').val(getQueryVariable('font-weight-headers'));
+      $('.style_weight_headers').html('.article_header {font-weight:' + getQueryVariable('font-weight-headers') + ';}');
+      $('.param_weight_headers').text(getQueryVariable('font-weight-headers'));
+      $('.css_weight_headers').text(getQueryVariable('font-weight-headers'));
+    };
+  };
+  setFontWeightHeaders();
+
+  $('.i_weight_headers').bind("change paste keyup", function() {
+    $('.style_weight_headers').html('.article_header {font-weight:' + $(this).val() + ';}');
+    $('.param_weight_headers').text($(this).val());
+    $('.css_weight_headers').text($(this).val());
+  });
+
+
+
   function setFontHeaders() {
     if (getQueryVariable('font-family-headers') !== false) {
       $('.font_family_headers').val(getQueryVariable('font-family-headers'));
       $('.style_font_headers').html('.article_header {font-family:' + getQueryVariable('font-family-headers') + ';}');
       $('.param_font_headers').text(getQueryVariable('font-family-headers'));
-      $('.css_header_font').html('<br>  font-family: ' + getQueryVariable('font-family-headers') + ';');
+      $('.css_font_headers').html('<br>  font-family: ' + getQueryVariable('font-family-headers') + ';');
     };
   };
-
   setFontHeaders();
+
   $('.font_family_headers').bind("change paste keyup", function() {
     $('.style_font_headers').html('.article_header {font-family:' + $(this).val() + ';}');
     $('.param_font_headers').text(encodeURIComponent($(this).val()));
     if($(this).val() !== false) {
-      $('.css_header_font').html('<br>  font-family: ' + $(this).val() + ';');
+      $('.css_font_headers').html('<br>  font-family: ' + $(this).val() + ';');
     };
     setPreviewHeight();
   });

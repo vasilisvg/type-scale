@@ -25,7 +25,9 @@
     ga('send', 'pageview');
     </script>
 
+    %style.style_weight{type: "text/css"}
     %style.style_font_headers{type: "text/css"}
+    %style.style_weight_headers{type: "text/css"}
     %style.style_background_color{type: "text/css"}
     %style.style_font_color{type: "text/css"}
 
@@ -89,15 +91,22 @@
                     %a.font_small{href: 'http://www.google.com/fonts/', target: '_blank', tabindex: '-1'} Find Webfont
                 %input.web_font{type: 'text', value: "Libre+Baskerville"}
 
-              .field
-                %label Font Family
-                %input.web_font_name{type: 'text', value: "'Libre Baskerville', serif"}
+              .cols.cols_fields
+                .col_two_thirds
+                  .field
+                    %label Font Family
+                    %input.web_font_name{type: 'text', value: "'Libre Baskerville', serif"}
+
+                .col_one_third
+                  .field
+                    %label Weight
+                    %input.i_weight{type: 'text', value: '400'}
 
               .field
                 %label Permalink
                 .font_small.overflow_gradient
                   %a.param_url
-                    http://type-scale.com/?size=<span class="param_size">20</span>&amp;scale=<span class="param_scale">1.414</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Libre+Baskerville</span>&amp;font-family=<span class="param_css">'Libre Baskerville', serif</span>&amp;font-family-headers=<span class="param_font_headers"></span>&amp;background-color=<span class="param_background_color">white</span>&amp;font-color=<span class="param_font_color">%23333</span>
+                    http://type-scale.com/?size=<span class="param_size">20</span>&amp;scale=<span class="param_scale">1.414</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Libre+Baskerville</span>&amp;font-family=<span class="param_css">'Libre Baskerville', serif</span>&amp;font-weight=<span class="param_weight">400</span>&amp;font-family-headers=<span class="param_font_headers"></span>&amp;font-weight-headers=<span class="param_weight_headers">inherit</span>&amp;background-color=<span class="param_background_color">white</span>&amp;font-color=<span class="param_font_color">%23333</span>
 
           <!-- AdPacks.com Zone Code -->
           <div id="bsap_1291994" class="bsarocks bsap_0539c68d8c24c7e870a450d4e50e9e0e"></div>
@@ -171,16 +180,21 @@
                       background-color: <span class="css_background_color">white</span>;
                       font-size: <span class="css_font_size"></span>em;
                       font-family: <span class="css_font_family">'Libre Baskerville', serif</span>;
+                      font-weight: <span class="css_weight">400</span>;
                       line-height: 1.45;
                       color: <span class="css_color">#333</span>;
                     }
 
                     h1, h2, h3, h4 {
-                      margin: 1.414em 0 0.5em;<span class="css_header_font"></span>
+                      margin: 1.414em 0 0.5em;<span class="css_font_headers"></span>
+                      font-weight: <span class="css_weight_headers">inherit</span>;
                       line-height: 1.2;
                     }
 
-                    h1 {font-size: <span class="css_header_size"></span>em;}
+                    h1 {
+                      margin-top: 0;
+                      font-size: <span class="css_header_size"></span>em;
+                    }
 
                     h2 {font-size: <span class="css_header_size"></span>em;}
 
@@ -265,9 +279,16 @@
         .js_article_options.hide
           .break_medium
           %form
-            .field
-              %label Header Font Family
-              %input.font_family_headers{type: 'text'}
+            .cols.cols_fields
+              .col_two_thirds
+                .field
+                  %label Header Font Family
+                  %input.font_family_headers{type: 'text'}
+
+              .col_one_third
+                .field
+                  %label Weight
+                  %input.i_weight_headers{type: 'text', value: 'inherit'}
 
             .cols.cols_fields
               .col_half
