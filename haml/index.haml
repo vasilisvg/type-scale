@@ -168,19 +168,19 @@
 
           %form{action: 'http://codepen.io/pen/define', method: 'POST', target: '_blank'}
 
-            %span.btn.font_small.expand_down{data: {'toggle' => '.js_generated_css'}}
+            %span.btn.font_small.expand_down{data: {'toggle' => '.js_generated_css'}, onClick: "_gaq.push(['_trackEvent', 'Actions', 'Toggle', 'Generated CSS']);"}
               %span.fa.fa-fw.fa-chevron-down
               Grab the CSS
             &nbsp;
 
             %input.codepen_json{type: 'hidden', name: 'data'}
 
-            %input.codepen_btn.font_small{type: 'submit', value: 'Edit on CodePen'}
+            %input.codepen_btn.font_small{type: 'submit', value: 'Edit on CodePen', onClick: "_gaq.push(['_trackEvent', 'External Links', 'Visit', 'Edit on CodePen']);"}
 
           .js_generated_css.hide
             .break_small
             .box.content_width
-              %pre.codepen_able.font_small{data: {'type' => 'css'}, contenteditable: 'true', onclick: "document.execCommand('selectAll',false,null)"}
+              %pre.codepen_able.font_small{data: {'type' => 'css'}, contenteditable: 'true', onClick: "document.execCommand('selectAll',false,null); _gaq.push(['_trackEvent', 'Actions', 'Select', 'Select CSS']);"}
                 %code
                   :preserve
                     body {
@@ -279,9 +279,9 @@
             Project available on <a href="https://github.com/jeremychurch/type-scale">Github</a>. Code licensed under <a href="http://opensource.org/licenses/mit-license.html">MIT License</a>.
 
     .article_preview
-      .article_preview_button.fa.fa-chevron-left.fa-lg.fa-fw
+      .article_preview_button.fa.fa-chevron-left.fa-lg.fa-fw{onClick: "_gaq.push(['_trackEvent', 'Actions', 'Toggle', 'Article Preview']);"}
       .article_preview_inner
-        %span.btn.font_small.expand_down.more_options_button{data: {'toggle' => '.js_article_options'}}
+        %span.btn.font_small.expand_down.more_options_button{data: {'toggle' => '.js_article_options'}, onClick: "_gaq.push(['_trackEvent', 'Actions', 'Toggle', 'Article Options']);"}
           %span.fa.fa-fw.fa-chevron-down
           Options
 
