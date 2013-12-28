@@ -166,14 +166,21 @@
 
           %hr
 
-          %span.btn.font_small.expand_down{data: {'toggle' => '.js_generated_css'}}
-            %span.fa.fa-fw.fa-chevron-down
-            Grab the CSS
+          %form{action: 'http://codepen.io/pen/define', method: 'POST', target: '_blank'}
+
+            %span.btn.font_small.expand_down{data: {'toggle' => '.js_generated_css'}}
+              %span.fa.fa-fw.fa-chevron-down
+              Grab the CSS
+            &nbsp;
+
+            %input.codepen_json{type: 'hidden', name: 'data'}
+
+            %input.codepen_btn.font_small{type: 'submit', value: 'Edit on CodePen'}
 
           .js_generated_css.hide
             .break_small
             .box.content_width
-              %pre.font_small{contenteditable: 'true', onclick: "document.execCommand('selectAll',false,null)"}
+              %pre.codepen_able.font_small{data: {'type' => 'css'}, contenteditable: 'true', onclick: "document.execCommand('selectAll',false,null)"}
                 %code
                   :preserve
                     body {
@@ -184,6 +191,8 @@
                       line-height: 1.45;
                       color: <span class="css_color">#333</span>;
                     }
+
+                    p {margin-bottom: 1.3em;}
 
                     h1, h2, h3, h4 {
                       margin: 1.414em 0 0.5em;<span class="css_font_headers"></span>
@@ -202,7 +211,7 @@
 
                     h4 {font-size: <span class="css_header_size"></span>em;}
 
-                    .font_small {font-size: <span class="css_small_size"></span>em;}
+                    small, .font_small {font-size: <span class="css_small_size"></span>em;}
 
     .content.container
       .cols.stage_footer
