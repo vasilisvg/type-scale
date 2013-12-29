@@ -182,18 +182,18 @@
           </div>
           <hr>
           <form action='http://codepen.io/pen/define' method='POST' target='_blank'>
-            <span class='btn font_small expand_down' data-toggle='.js_generated_css' onClick="_gaq.push(['_trackEvent', 'Actions', 'Toggle', 'Generated CSS']);">
+            <span class='btn font_small expand_down' data-toggle='.js_generated_css' onClick="ga('send', 'event', 'action', 'toggle', 'css-button');">
               <span class='fa fa-fw fa-chevron-down'></span>
               Grab the CSS
             </span>
             &nbsp;
             <input class='codepen_json' name='data' type='hidden'>
-            <input class='codepen_btn font_small' onClick="_gaq.push(['_trackEvent', 'External Links', 'Visit', 'Edit on CodePen']);" type='submit' value='Edit on CodePen'>
+            <input class='codepen_btn font_small' onClick="ga('send', 'event', 'external-link', 'click', 'codepen-button');" type='submit' value='Edit on CodePen'>
           </form>
           <div class='js_generated_css hide'>
             <div class='break_small'></div>
             <div class='box content_width'>
-              <pre class='codepen_able font_small' contenteditable='true' data-type='css' onClick="document.execCommand('selectAll',false,null); _gaq.push(['_trackEvent', 'Actions', 'Select', 'Select CSS']);"><code>body {&#x000A;  background-color: <span class="css_background_color">white</span>;&#x000A;  font-size: <span class="css_font_size"></span>em;&#x000A;  font-family: <span class="css_font_family">'Libre Baskerville', serif</span>;&#x000A;  font-weight: <span class="css_weight">400</span>;&#x000A;  line-height: 1.45;&#x000A;  color: <span class="css_color">#333</span>;&#x000A;}&#x000A;&#x000A;p {margin-bottom: 1.3em;}&#x000A;&#x000A;h1, h2, h3, h4 {&#x000A;  margin: 1.414em 0 0.5em;<span class="css_font_headers"></span>&#x000A;  font-weight: <span class="css_weight_headers">inherit</span>;&#x000A;  line-height: 1.2;&#x000A;}&#x000A;&#x000A;h1 {&#x000A;  margin-top: 0;&#x000A;  font-size: <span class="css_header_size"></span>em;&#x000A;}&#x000A;&#x000A;h2 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h3 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h4 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;small, .font_small {font-size: <span class="css_small_size"></span>em;}&#x000A;</code></pre>
+              <pre class='codepen_able font_small' contenteditable='true' data-type='css' onClick="document.execCommand('selectAll',false,null); ga('send', 'event', 'action', 'select', 'css-code');"><code>body {&#x000A;  background-color: <span class="css_background_color">white</span>;&#x000A;  font-size: <span class="css_font_size"></span>em;&#x000A;  font-family: <span class="css_font_family">'Libre Baskerville', serif</span>;&#x000A;  font-weight: <span class="css_weight">400</span>;&#x000A;  line-height: 1.45;&#x000A;  color: <span class="css_color">#333</span>;&#x000A;}&#x000A;&#x000A;p {margin-bottom: 1.3em;}&#x000A;&#x000A;h1, h2, h3, h4 {&#x000A;  margin: 1.414em 0 0.5em;<span class="css_font_headers"></span>&#x000A;  font-weight: <span class="css_weight_headers">inherit</span>;&#x000A;  line-height: 1.2;&#x000A;}&#x000A;&#x000A;h1 {&#x000A;  margin-top: 0;&#x000A;  font-size: <span class="css_header_size"></span>em;&#x000A;}&#x000A;&#x000A;h2 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h3 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h4 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;small, .font_small {font-size: <span class="css_small_size"></span>em;}&#x000A;</code></pre>
             </div>
           </div>
         </div>
@@ -276,9 +276,9 @@
       </div>
     </div>
     <div class='article_preview'>
-      <div class='article_preview_button fa fa-chevron-left fa-lg fa-fw' onClick="_gaq.push(['_trackEvent', 'Actions', 'Toggle', 'Article Preview']);"></div>
+      <div class='article_preview_button fa fa-chevron-left fa-lg fa-fw' onClick="ga('send', 'event', 'action', 'toggle', 'article-preview');"></div>
       <div class='article_preview_inner'>
-        <span class='btn font_small expand_down more_options_button' data-toggle='.js_article_options' onClick="_gaq.push(['_trackEvent', 'Actions', 'Toggle', 'Article Options']);">
+        <span class='btn font_small expand_down more_options_button' data-toggle='.js_article_options' onClick="ga('send', 'event', 'action', 'toggle', 'article-options');">
           <span class='fa fa-fw fa-chevron-down'></span>
           Options
         </span>
